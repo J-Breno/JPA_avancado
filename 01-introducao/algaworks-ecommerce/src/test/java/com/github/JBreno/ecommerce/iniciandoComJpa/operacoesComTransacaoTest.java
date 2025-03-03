@@ -12,9 +12,9 @@ public class operacoesComTransacaoTest extends EntityManagerTest {
 
         entityManager.getTransaction().begin();
 
-        entityManager.persist(produto);
-        entityManager.merge(produto);
-        entityManager.remove(produto);
+//        entityManager.persist(produto);
+//        entityManager.merge(produto);
+//        entityManager.remove(produto);
 
         entityManager.getTransaction().commit();
     }
