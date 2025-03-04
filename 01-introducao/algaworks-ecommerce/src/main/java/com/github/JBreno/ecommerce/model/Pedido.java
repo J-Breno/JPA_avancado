@@ -19,6 +19,9 @@ public class Pedido {
     @Id
     private Integer id;
 
+    @Column(name = "data_pedido")
+    private LocalDateTime dataPedido;
+
     @Column(name = "data_conclusao")
     private LocalDateTime dataConclusao;
 
@@ -29,4 +32,7 @@ public class Pedido {
 
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
+
+    @Embedded
+    private EnderecoEntregaPedido enderecoEntrega;
 }
