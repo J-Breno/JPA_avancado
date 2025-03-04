@@ -11,7 +11,7 @@ public class MapeamentoEnumeracoesTest extends EntityManagerTest {
     @Test
     public void testarEnum() {
         Cliente cliente = new Cliente();
-        cliente.setId(4);
+//        cliente.setId(4); Comentado porque estamos usando IDENTITY
         cliente.setNome("Arielle");
         cliente.setSexo(SexoCliente.FEMININO);
 

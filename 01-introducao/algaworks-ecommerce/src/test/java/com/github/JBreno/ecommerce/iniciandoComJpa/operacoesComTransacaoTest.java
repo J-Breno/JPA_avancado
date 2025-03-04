@@ -28,7 +28,7 @@ public class operacoesComTransacaoTest extends EntityManagerTest {
     @Test
     public void mostrarDiferenciaPersistMerge() {
         Produto produtoPersist = new Produto();
-        produtoPersist.setId(5);
+//        produtoPersist.setId(5);
         produtoPersist.setNome("SmartPhone One Plus");
         produtoPersist.setDescricao("A melhor processador");
         produtoPersist.setPreco(new BigDecimal(2000));
@@ -67,20 +67,20 @@ public class operacoesComTransacaoTest extends EntityManagerTest {
     @Test
     public void inserirObjetoComMerge() {
         Produto produto = new Produto();
-        produto.setId(4);
+//        produto.setId(4);
         produto.setNome("Microfone Rode Videmic");
         produto.setDescricao("A melhor qualidade de som");
         produto.setPreco(new BigDecimal(1000));
 
         entityManager.getTransaction().begin();
 
-        entityManager.merge(produto);
+        Produto produtoGerado = entityManager.merge(produto);
 
         entityManager.getTransaction().commit();
 
         entityManager.clear();
 
-        Produto produtoVerificacao = entityManager.find(Produto.class, produto.getId());
+        Produto produtoVerificacao = entityManager.find(Produto.class, produtoGerado.getId());
         Assert.assertNotNull(produtoVerificacao);
     }
 
@@ -137,7 +137,7 @@ public class operacoesComTransacaoTest extends EntityManagerTest {
     @Test
     public void inserirPrimeiroObjeto() {
         Produto produto = new Produto();
-        produto.setId(2);
+//        produto.setId(2);
         produto.setNome("Câmera Canon");
         produto.setDescricao("A melhor definição para suas fotos");
         produto.setPreco(new BigDecimal(5000));

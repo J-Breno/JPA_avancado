@@ -14,6 +14,7 @@ import javax.persistence.*;
 public class PagamentoBoleto {
     @EqualsAndHashCode.Include
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 
     @Column(name = "pedido_id")
