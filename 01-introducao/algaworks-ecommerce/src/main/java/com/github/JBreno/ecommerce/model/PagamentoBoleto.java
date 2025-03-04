@@ -6,17 +6,16 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Objects;
 
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Cliente {
-
+public class PagamentoBoleto {
     @EqualsAndHashCode.Include
     @Id
-    private Integer id;
-    private String nome;
-    private SexoCliente sexo;
+    private Integer Id;
+    private Integer pedidoId;
+    private StatusPagamento status;
+    private String codigoBarras;
 }
