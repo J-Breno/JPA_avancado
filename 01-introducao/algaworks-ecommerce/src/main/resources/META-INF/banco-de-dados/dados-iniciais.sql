@@ -6,3 +6,5 @@ INSERT INTO cliente (id, nome) VALUES (2, 'Souza Melo');
 
 INSERT INTO pedido (id, cliente_id, data_pedido, total, status) VALUES (1, 1, '2025-03-04 12:00:00', 2, 'AGUARDANDO');
 INSERT INTO item_pedido (id, pedido_id, produto_id, preco_produto, quantidade) VALUES (1, 1, 1, 400, 1);
+
+INSERT INTO categoria (id, nome) VALUES (1, 'Eletrônicos');
