@@ -1,9 +1,7 @@
 package com.github.JBreno.ecommerce.mapeamentoBasico;
 
 import com.github.JBreno.ecommerce.EntityManagerTest;
-import com.github.JBreno.ecommerce.model.EnderecoEntregaPedido;
-import com.github.JBreno.ecommerce.model.Pedido;
-import com.github.JBreno.ecommerce.model.StatusPedido;
+import com.github.JBreno.ecommerce.model.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -22,16 +20,24 @@ public class MapeamentoObjetoEmbutidoTest extends EntityManagerTest {
         endereco.setCidade("Sulista");
         endereco.setEstado("Sulzinho");
 
+        Cliente cliente = new Cliente();
+        cliente.setNome("João Souza Melo");
+        cliente.setSexo(SexoCliente.MASCULINO);
+
         Pedido pedido = new Pedido();
 
 
-//        pedido.setId(1); Comentado porque estamos usando IDENTITY
+//        pedido.setId(1);
         pedido.setDataPedido(LocalDateTime.now());
         pedido.setStatus(StatusPedido.AGUARDANDO);
         pedido.setTotal(new BigDecimal(1000));
         pedido.setEnderecoEntrega(endereco);
+        pedido.setCliente(cliente);
+
+
 
         entityManager.getTransaction().begin();
+        entityManager.persist(cliente);
         entityManager.persist(pedido);
         entityManager.getTransaction().commit();
 
